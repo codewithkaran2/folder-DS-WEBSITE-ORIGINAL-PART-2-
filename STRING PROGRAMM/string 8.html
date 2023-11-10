@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!--
+-->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time2Code</title>
+    <!-- style -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+<div class="second">
+
+     <h1>    </h1>
+<pre class="input">
+    
+     #include&#60;stdio.h&#62;
+     #include&#60;conio.h&#62;
+
+     char* strConcat(char firststr[], char secondstr[]){
+        int str1len, i;
+        for (str1len = 0; firststr[str1len] != '\0'; str1len++);
+    
+        for (i = 0; secondstr[i] != '\0'; i++)
+        {
+            firststr[str1len++] = secondstr[i]; 
+        }
+        firststr[str1len] = '\0';
+        return firststr;
+    }
+    
+    void main(){
+        char str1[30], str2[30];
+        clrscr();
+        printf("Enter first String\n");
+        gets(str1);
+        printf("Enter second String\n");
+        gets(str2);
+        // strConcat(str1, str2);
+        printf("Concatinated String is %s\n", strConcat(str1, str2));
+    }
+  
+
+</pre>
+<h1>OUTPUT</h1>
+
+<pre class="output">
+    Enter first String
+    Hello                                                                           
+    Enter second String                                                             
+    toeveryone     
+
+    Concatinated String is Hellotoeveryone  
+   
+
+     
+</pre>
+
+</div>
+
+
+</body>
+
+</html>

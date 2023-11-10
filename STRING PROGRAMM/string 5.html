@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!--
+-->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time2Code</title>
+    <!-- style -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+<div class="second">
+
+     <h1>    </h1>
+<pre class="input">
+    
+     #include&#60;stdio.h&#62;
+     #include&#60;conio.h&#62;
+     char* strToggle(char str[]){
+        int i;
+        for (i = 0; str[i] != '\0'; i++)
+        {
+            if (str[i] >= 'A' && str[i] <= 'Z')
+                str[i] += 32;
+            else if(str[i] >= 'a' && str[i] <= 'z')
+                str[i] -= 32;
+        }
+        return str;
+    }
+    
+    void main(){
+        char str[30];
+        clrscr();
+        printf("Enter a String\n");
+        gets(str);
+        printf("String Before Togglecase: %s\n", str);
+        strToggle(str);
+        printf("String After Togglecase: %s\n", str);
+    }
+        
+   
+    
+  
+
+</pre>
+<h1>OUTPUT</h1>
+
+<pre class="output">
+    Enter a String
+    aHelo Helos             
+                                                            
+    String Before Togglecase: aHelo Helos                                           
+    String After Togglecase: AhELO hELOS 
+
+     
+</pre>
+
+</div>
+
+
+</body>
+
+</html>

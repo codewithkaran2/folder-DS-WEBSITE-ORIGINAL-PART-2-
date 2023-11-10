@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<!--
+-->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time2Code</title>
+    <!-- style -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+<div class="second">
+
+     <h1>    </h1>
+<pre class="input">
+    
+     #include&#60;stdio.h&#62;
+     #include&#60;conio.h&#62;
+
+     void main(){
+          int i,j;
+          char str[30];
+          clrscr();
+          printf("Enter String\n");
+          gets(str);
+          printf("Before Trim\n");
+          printf("%c", '(');
+          printf("%s", str);
+          printf("%c\n", ')');
+      
+          for (i = 0; str[i]; i++)
+          {
+          j=0;
+          for (j = 0; str[i+j] == ' '; j++);
+          if(str[i+j] == '\0')
+          {
+              str[i] = str[i+j];
+              break;
+          }
+          else
+              i = i+j;
+      
+          }
+          for(i = 0, j = 0; str[i]; i++){
+          if(i == 0 && str[i] == ' ')
+              while(str[i+1] == ' ')
+                i++;
+          else
+             str[j++] = str[i];
+          }
+          str[j] = '\0';
+          printf("After Trim\n");
+          printf("%c", '(');
+          printf("%s", str);
+          printf("%c", ')');
+      }   
+            
+
+</pre>
+<h1>OUTPUT</h1>
+
+<pre class="output">
+     Enter String
+     i am jack   
+ 
+     Before Trim                                                                     
+     (   i am jack   )   
+ 
+     After Trim                                                                      
+     (i am jack) 
+
+     
+</pre>
+
+</div>
+
+
+</body>
+
+</html>

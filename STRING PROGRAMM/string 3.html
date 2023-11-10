@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!--
+-->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time2Code</title>
+    <!-- style -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+<div class="second">
+
+     <h1>    </h1>
+<pre class="input">
+    
+     #include&#60;stdio.h&#62;
+     #include&#60;conio.h&#62;
+
+     char* strSentence(char str[]){
+        int i;
+        for (i = 0; str[i] != '\0'; i++){
+            if( (i==0) && (str[i]>='a' && str[i]<='z')){
+                str[i] -= 32;
+            }
+            else if(str[i]=='.')
+            {
+                if(str[i+1] == ' ')
+                {
+                    if(str[i+2]>='a' && str[i+2]<='z')
+                    {
+                        str[i+2] -= 32;
+                    }
+                }
+                else
+                {         
+                    if(str[i+1]>='a' && str[i+1]<='z')
+                    {
+                        str[i+1] -= 32;
+                    }
+                }
+            }
+        }
+        return str;
+    }
+    
+    void main(){
+        char str[30];
+        clrscr();
+        printf("Enter a String\n");
+        gets(str);
+        printf("String Before Sentence Case: %s\n", str);
+        strSentence(str);
+        printf("String After Sentence Case: %s\n", str);
+    }
+          
+    
+  
+
+</pre>
+<h1>OUTPUT</h1>
+
+<pre class="output">
+    Enter a String
+   my name is dos     
+
+    String Before Sentence Case:my name is dos                           
+    String After Sentence Case:MY name is dos        
+
+     
+</pre>
+
+</div>
+
+
+</body>
+
+</html>

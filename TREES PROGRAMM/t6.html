@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!--
+-->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time2Code</title>
+    <!-- style -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+<div class="second">
+
+     <h1>    </h1>
+<pre class="input">
+    
+     #include&#60;stdio.h&#62;
+     #include&#60;conio.h&#62;
+  
+     struct TreeNode {
+          int val;
+          struct TreeNode* left;
+          struct TreeNode* right;
+      };
+      typedef struct TreeNode Node;
+      Node* newNode(int val) {
+          Node* node = (Node*)malloc(sizeof(Node));
+          node->val = val;
+          node->left = NULL;
+          node->right = NULL;
+          return node;
+      }
+      
+      int maxDepth(Node* root) {
+          if (root == NULL) {
+              return 0;
+          } else {
+              int leftDepth = maxDepth(root->left);
+              int rightDepth = maxDepth(root->right);
+      
+              return (leftDepth > rightDepth) ? (leftDepth + 1) : (rightDepth + 1);
+          }
+      }
+      
+      int main() {
+          Node* root = newNode(1);
+          root->left = newNode(2);
+          root->right = newNode(3);
+          root->left->left = newNode(4);
+          root->left->right = newNode(5);
+          root->left->left->left = newNode(54);
+          int depth = maxDepth(root);
+          printf("Maximum depth of the binary tree is: %d\n", depth);
+      
+          return 0;
+      }
+      
+  
+
+</pre>
+<h1>OUTPUT</h1>
+
+<pre class="output">
+     Maximum depth of the binary tree is: 4    
+
+     
+</pre>
+
+</div>
+
+
+</body>
+
+</html>
